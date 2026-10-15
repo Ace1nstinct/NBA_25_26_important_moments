@@ -31,8 +31,9 @@ for idx, item in enumerate(MOMENTS):
         'quiet': False,
         'ignoreerrors': True,
         'match_filter': yt_dlp.utils.match_filter_func("duration < 900"),
-        'extractor_args': {'youtube': {'player_client': ['android', 'web']}}
+        'extractor_args': {'youtube': {'player_client': ['ios', 'mweb', 'android']}}
     }
+
     print(f"Downloading {item['title']}...")
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([item['query']])
